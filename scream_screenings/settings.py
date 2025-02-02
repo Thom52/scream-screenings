@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # Apps
     'screamhome',
+    'about',
+    'movie',
 ]
 
 MIDDLEWARE = [
