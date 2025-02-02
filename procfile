@@ -1,0 +1,1 @@
+web: gunicorn scream_screenings.wsgi
