@@ -1,0 +1,96 @@
+:root {
+  /* Fonts */
+  --base: "raleway", sans-serif;
+
+  /* Colors */
+  --blood-red: #880808;
+  --red: #dc143c;
+}
+
+/* Basic Styles */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation styles */
+
+.nav-heading {
+  font-family: var(--base);
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.nav-item {
+  font-size: 1.5rem;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.nav-logo {
+  max-width: 80px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.navbar-toggler {
+  margin-right: 20px;
+}
+
+.nav-heading-red {
+  color: var(--blood-red);
+  font-weight: bold;
+}
+
+.nav-red {
+  color: var(--blood-red);
+}
+
+.nav-red:hover {
+  color: var(--red);
+}
+
+/* Footer */
+
+.footer-text {
+  font-style: var(--base);
+  font-weight: 200;
+}
+
+a {
+  text-decoration: none;
+  padding: 5px;
+  font-size: 25px;
+}
+
+.footer-heading {
+  text-transform: uppercase;
+}
+
+.footer-heading-red {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--blood-red);
+}
+
+/* Media Queries */
+
+/* Navigation */
+
+@media (min-width: 768px) {
+  .nav-heading {
+    font-size: 25px;
+  }
+
+  .nav-logo {
+    max-width: 120px;
+  }
+
+  .navbar-toggler {
+    margin-right: 50px;
+  }
+}

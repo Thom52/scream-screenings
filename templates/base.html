@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,24 +7,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Scream Screenings</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome CSS -->
+    <script
+      src="https://kit.fontawesome.com/92b8c3a44a.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- Bootstrap CSS -->
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-      crossorigin="anonymous"
     />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <h2>This is my navbar...</h2>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <!-- Logo -->
+      <a class="navbar-brand ms-3 ms-lg-5" href="#">
+        <img
+          class="nav-logo"
+          src="{% static 'images/logo.webp' %}"
+          alt=""
+        /><span class="nav-heading">Scream</span
+        ><span class="nav-heading nav-heading-red">Screenings</span></a
+      >
+
+      <!-- Navbar toggler for mobile view -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible navbar links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-red" href="#">Movies</a>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <main>{% block content %} {% endblock %}</main>
 
     <footer>
-      <h2>This is my footer</h2>
+      <footer class="py-3 bg-black">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-6 mx-auto text-center">
+              <span class="text-white footer-text d-block mb-2"
+                >Follow us and join our community on:</span
+              >
+              <div class="social-widget mb-2">
+                <!-- Facebook Link -->
+                <a
+                  href="https://facebook.com"
+                  class="social-link mx-2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Follow us on Facebook (opens in a new tab)"
+                >
+                  <i class="fa-brands fa-facebook footer-text"></i>
+                </a>
+
+                <!-- Twitter Link -->
+                <a
+                  href="https://twitter.com"
+                  class="social-link mx-2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Follow us on Twitter (opens in a new tab)"
+                >
+                  <i
+                    class="fa-brands fa-twitter footer-text"
+                    style="color: #3684d9"
+                  ></i>
+                </a>
+
+                <!-- Instagram Link -->
+                <a
+                  href="https://instagram.com"
+                  class="social-link mx-2"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Follow us on Instagram (opens in a new tab)"
+                >
+                  <i
+                    class="fa-brands fa-instagram footer-text"
+                    style="color: #e548d8"
+                  ></i>
+                </a>
+              </div>
+
+              <!-- Footer Copyright Notice -->
+              <p class="footer-copyright m-0 footer-text text-white">
+                Copyright &copy; <span class="footer-heading">Scream</span
+                ><span class="footer-heading-red">Screenings</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
