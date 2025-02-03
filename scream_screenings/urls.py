@@ -18,11 +18,9 @@ from django.contrib import admin
 from django.urls import path, include
 from screamhome import views
 from movie import views as movie_views
-from about import views as about_views
 
 urlpatterns = [
     path('', views.index, name='home'),
     path('movie/', movie_views.movie, name='movie'),
-    path('about/', about_views.about, name='about'),
     path('admin/', admin.site.urls),
 ]
