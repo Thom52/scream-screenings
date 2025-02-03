@@ -1,22 +1,95 @@
 :root {
-  /* Fonts */
-  --base: "raleway", sans-serif;
+  /* Fonts ------------------------------  */
+  --base: "Raleway", sans-serif;
+  --heading: "Lato", sans-serif;
+  --text: "Roboto Slab", serif;
 
-  /* Colors */
+  /* Colors ------------------------------  */
   --blood-red: #880808;
   --red: #dc143c;
+  --white: #fff;
+  --black: #000;
 }
 
-/* Basic Styles */
+/* Basic Styles ------------------------------  */
+
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Navigation styles */
+h1,
+h2 {
+  font-family: var(--base);
+  font-weight: 300;
+}
+
+p {
+  font-size: 13px;
+  font-family: var(--text);
+  font-weight: 300;
+}
+
+/* Introduction Styles ------------------------------ */
+
+.introduction-section {
+  background: var(--white);
+}
+
+.introduction-heading-bold {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--blood-red);
+}
+
+/* Map styles ------------------------------  */
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--blood-red);
+}
+
+.map-container {
+  width: 90%;
+  height: 40vh;
+  margin: 20px;
+}
+
+.google-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-text-container {
+  padding: 10px 20px;
+  text-align: center;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.map-text-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.map-text-container p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+/* Navigation styles ------------------------------  */
 
 .nav-heading {
   font-family: var(--base);
@@ -54,7 +127,7 @@ body {
   color: var(--red);
 }
 
-/* Footer */
+/* Footer ------------------------------  */
 
 .footer-text {
   font-style: var(--base);
@@ -77,11 +150,65 @@ a {
   color: var(--blood-red);
 }
 
-/* Media Queries */
+.social-link {
+  color: var(--blood-red);
+}
 
-/* Navigation */
+.social-link:hover {
+  color: var(--red);
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Buttons ------------------------------  */
+
+.btn-introduction {
+  color: var(--white);
+  background-color: var(--blood-red);
+}
+
+.btn-introduction:hover {
+  color: var(--white);
+  background-color: var(--red);
+}
+
+/* Media Queries ------------------------------  */
+
+/* Media Query for larger screens (768px and up) ------------------------------  */
 
 @media (min-width: 768px) {
+  /* Introduction ------------------------------  */
+  p {
+    font-size: 20px;
+  }
+
+  /* Map ------------------------------  */
+
+  .map-section {
+    flex-direction: row-reverse;
+  }
+
+  .map-container {
+    width: 50%;
+    margin: 20px;
+  }
+
+  .map-text-container {
+    width: 50%;
+    text-align: left;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .map-text-container h2 {
+    font-size: 35px;
+  }
+
+  /* Navigation ------------------------------  */
   .nav-heading {
     font-size: 25px;
   }
