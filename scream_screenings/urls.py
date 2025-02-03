@@ -17,10 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from screamhome import views
-from movie import views as movie_views
 
 urlpatterns = [
     path('', views.index, name='home'),
-    path('movie/', movie_views.movie, name='movie'),
     path('admin/', admin.site.urls),
 ]

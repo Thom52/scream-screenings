@@ -1,7 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
 
 # Create your views here.
 def movie(request):
-    return HttpResponse("Hello, this is the movie page!")
+    return render(request, 'movie/movie-detail.html')
