@@ -77,6 +77,14 @@ a {
   color: var(--blood-red);
 }
 
+.social-link {
+  color: var(--blood-red);
+}
+
+.social-link:hover {
+  color: var(--red);
+}
+
 /* Media Queries */
 
 /* Navigation */
