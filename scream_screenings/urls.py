@@ -16,9 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from screamhome import views
+from screamhome import views as screamhome_views 
+from movie import views as movie_views
 
 urlpatterns = [
-    path('', views.index, name='home'),
     path('admin/', admin.site.urls),
+    path('movies/', movie_views.movie_list, name='movies-list'),
+    path('movie/<int:movie_id>/', movie_views.movie_detail, name='movie-detail'),
+    path('', screamhome_views.index, name='home'),
 ]
