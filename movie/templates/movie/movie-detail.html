@@ -1,18 +1,32 @@
 {% extends "base.html" %} {% load static %} {% block content %}
 
-<h1>{{ movie.title }}</h1>
+<div class="container mt-4">
+  <h1>{{ movie.title }}</h1>
+  <p><strong>Screening Date:</strong> {{ movie.screening_datetime }}</p>
+  <div class="row">
+    <!-- Left Column (Poster) -->
+    <div class="col-12 col-md-4">
+      <img
+        src="{{ movie.poster.url }}"
+        alt="{{ movie.title }} Poster"
+        class="img-fluid"
+      />
+    </div>
 
-<div class="movie-detail">
-  <img
-    src="{{ movie.poster.url }}"
-    alt="{{ movie.title }} Poster"
-    style="width: 300px; height: auto"
-  />
-  <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
-  <p><strong>Director:</strong> {{ movie.director }}</p>
-  <p><strong>Description:</strong> {{ movie.description }}</p>
+    <!-- Right Column (Movie Details) -->
+    <div class="col-12 col-md-8">
+      <div class="movie-detail">
+        <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+        <p><strong>Director:</strong> {{ movie.director }}</p>
+        <p><strong>Description:</strong> {{ movie.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <a href="{% url 'movies-list' %}" class="btn btn-red mt-3 mb-3"
+    >Back to Movie List</a
+  >
 </div>
-
-<a href="{% url 'movies-list' %}">Back to Movie List</a>
 
 {% endblock %}
