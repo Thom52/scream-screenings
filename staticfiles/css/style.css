@@ -27,7 +27,10 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--base);
   font-weight: 300;
 }
@@ -162,28 +165,64 @@ footer {
   margin-top: auto;
 }
 
+/* Movie List Styles ------------------------------ */
+
+.movie-list-heading {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 20px;
+}
+
+.movie-list-text {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+
+/* Card Styles ------------------------------  */
+
+.card-custom {
+  margin-left: 20px;
+  width: 85%;
+  height: 100%;
+  background-color: var(--blood-red);
+}
+
+.card-title {
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.card-text {
+  color: var(--white);
+}
+
+/* card transition styles ------------------------------  */
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
 /* Buttons ------------------------------  */
 
-.btn-introduction {
+.btn-red {
   color: var(--white);
   background-color: var(--blood-red);
 }
 
-.btn-introduction:hover {
+.btn-red:hover {
   color: var(--white);
   background-color: var(--red);
 }
 
 /* Media Queries ------------------------------  */
 
-/* Media Query for larger screens (768px and up) ------------------------------  */
+/* Media Query for tablet screens (768px and up) ------------------------------  */
 
 @media (min-width: 768px) {
-  /* Introduction ------------------------------  */
-  p {
-    font-size: 20px;
-  }
-
   /* Map ------------------------------  */
 
   .map-section {
@@ -219,5 +258,20 @@ footer {
 
   .navbar-toggler {
     margin-right: 50px;
+  }
+}
+
+/* Media Query for larger screens (992px and up) ------------------------------  */
+
+@media (min-width: 992px) {
+  /* Introduction ------------------------------  */
+  p {
+    font-size: 15px;
+  }
+
+  /* Cards ------------------------------  */
+  .card {
+    margin-left: 160px;
+    width: 100%;
   }
 }
