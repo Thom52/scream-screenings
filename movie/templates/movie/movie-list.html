@@ -14,7 +14,8 @@
           <img
             src="{{ movie.poster.url }}"
             class="card-img-top"
-            alt="{{ movie.title }}"
+            alt="{{ movie.title|default:'Movie Image'"
+            }}
           />
         </a>
         {% else %}
@@ -25,8 +26,17 @@
         />
         {% endif %}
         <div class="card-body">
-          <h5 class="card-title">{{ movie.title }}</h5>
-          <p class="card-text">{{ movie.description|truncatewords:20 }}</p>
+          <h5 class="card-title">{{ movie.title|default:"Untitled Movie" }}</h5>
+
+          <p class="card-text">
+            {% if movie.description %} {{ movie.description|truncatewords:20 }}
+            {% else %} No description available {% endif %}
+          </p>
+
+          <!-- <p class="card-text">
+            {{ movie.description|default:"No description
+            available"|truncatewords:20 }}
+          </p> -->
           <a href="{% url 'movie-detail' movie.slug %}" class="btn btn-dark"
             >View Details</a
           >
