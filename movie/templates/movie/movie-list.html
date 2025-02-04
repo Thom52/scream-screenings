@@ -1,21 +1,44 @@
 {% extends "base.html" %} {% load static %} {% block content %}
+<div class="text-center">
+  <h1 class="movie-list-heading">Upcoming Movies!</h1>
+  <p class="movie-list-text">Click on your movie of choice for more details!</p>
+</div>
 
-<h1>Movie List</h1>
-
-<div class="movie-list">
-  {% for movie in movies %}
-  <div class="movie-card">
-    <a href="{% url 'movie-detail' movie.slug %}">
-      <img
-        src="{{ movie.poster.url }}"
-        alt="{{ movie.title }} Poster"
-        style="width: 200px; height: auto"
-      />
-      <h2>{{ movie.title }}</h2>
-      <p><strong>Screening Date:</strong> {{ movie.release_date }}</p>
-    </a>
+<div class="container mt-4">
+  <div class="row">
+    {% for movie in movies %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+      <div class="card card-custom text-center">
+        {% if movie.poster %}
+        <a href="{% url 'movie-detail' movie.slug %}">
+          <img
+            src="{{ movie.poster.url }}"
+            class="card-img-top"
+            alt="{{ movie.title }}"
+          />
+        </a>
+        {% else %}
+        <img
+          src="https://via.placeholder.com/300x200"
+          class="card-img-top"
+          alt="Placeholder Image"
+        />
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ movie.title }}</h5>
+          <p class="card-text">{{ movie.description|truncatewords:20 }}</p>
+          <a href="{% url 'movie-detail' movie.slug %}" class="btn btn-dark"
+            >View Details</a
+          >
+        </div>
+      </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}
   </div>
-  {% endfor %}
+  <div class="row">
+    <!-- Starts a new row after every 3 cards -->
+    {% endif %} {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

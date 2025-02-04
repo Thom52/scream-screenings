@@ -6,6 +6,7 @@ from cloudinary.models import CloudinaryField
 class Movie(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
+    screening_datetime = models.DateTimeField(null=True, blank=True)
     release_date = models.DateField()
     description = models.TextField()
     duration = models.DurationField(default=timedelta(minutes=90))
