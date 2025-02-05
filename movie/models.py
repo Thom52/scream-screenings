@@ -12,6 +12,7 @@ class Movie(models.Model):
     duration = models.DurationField(default=timedelta(minutes=90))
     director = models.CharField(max_length=255)
     poster = CloudinaryField('poster', default='https://res.cloudinary.com/dqn4oyjlv/image/upload/v1738684919/default-poster_hjhwj4.webp')
+    cost = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         # Automatically generate the slug from the title before saving

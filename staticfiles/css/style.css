@@ -218,6 +218,12 @@ footer {
   background-color: var(--red);
 }
 
+/* Authentication Styles ------------------------------  */
+
+.auth-link {
+  color: var(--blood-red);
+}
+
 /* Media Queries ------------------------------  */
 
 /* Media Query for tablet screens (768px and up) ------------------------------  */
