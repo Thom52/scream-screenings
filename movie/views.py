@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Movie
 
+
 #Create your views here.
 def movie_list(request):
     # Fetch the first six movies in the Movie model
@@ -13,11 +14,3 @@ def movie_detail(request, movie_slug):
     movie = get_object_or_404(Movie, slug=movie_slug)
     return render(request, 'movie/movie-detail.html', {'movie': movie})
 
-# def movie_list(request):
-    
-#     try:
-#         movies = Movie.objects.all().order_by('screening_datetime')[:6]
-#         return render(request, 'movie/movie-list.html', {'movies': movies})
-#     except Exception as e:
-#         print(f"Error in movie_list: {e}")
-#         return render(request, 'movie/movie-list.html', {'error': 'An error occurred while loading movies.'})

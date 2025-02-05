@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'movie',
 
     # Other
+    'crispy_forms',
     'cloudinary',
     'cloudinary_storage',
 ]
@@ -72,6 +73,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
      'allauth.account.middleware.AccountMiddleware',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 ROOT_URLCONF = 'scream_screenings.urls'
 

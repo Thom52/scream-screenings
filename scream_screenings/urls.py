@@ -26,3 +26,6 @@ urlpatterns = [
     path('movie/<slug:movie_slug>/', movie_views.movie_detail, name='movie-detail'),
     path('', screamhome_views.index, name='home'),
 ]
+
+
+    
