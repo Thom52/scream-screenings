@@ -12,5 +12,13 @@ def movie_list(request):
 def movie_detail(request, movie_slug):
     # Fetch the movie by its ID or return a 404 if not found
     movie = get_object_or_404(Movie, slug=movie_slug)
-    return render(request, 'movie/movie-detail.html', {'movie': movie})
+    comments = movie.comments.all().order_by("-created_on")
+    comment_count = movie.comments.filter(approved=True).count()
+
+    return render(request, 'movie/movie-detail.html', {
+        'movie': movie, 
+        "comments": comments,
+        "comment_count": comment_count,
+        }
+    )
 
