@@ -77,6 +77,19 @@
 
 <hr>
 
+**Google Map**
+
+- The webpage includes an embedded google map detailing the location of the building the movie screenings are taking place.
+- Will help people find the location.
+
+  <details><summary>Map Screenshot</summary>
+
+   <p align="center"><img src="static/images/map.png" alt="drawing" width="600"/></p>
+
+  </details>
+
+<hr>
+
 ## Future Features
 
 While the current version of the project is fully functional, we have some exciting features planned for future updates. Here are a few ideas that we didn't have time to implement in this release:
@@ -145,7 +158,6 @@ Lighthouse tests were executed using the Google Chrome browser's DevTools.
 Our web application is officially tested and supported on the following browsers and devices:
 
 - Google Chrome (latest version)
-- Brave (latest version)
 - Mozilla Firefox (latest version)
 
 **Responsiveness Testing**
@@ -194,18 +206,18 @@ Our web application is designed to be responsive and adapt to various screen siz
 
 <hr>
 
-#### Bugs Resolved
+#### Bugs & Testing
 
 **Introduction**
-This section provides a summary of bugs that have been identified, reported, and subsequently resolved in Scream Screenings.
+This section provides a summary of bugs that have been identified, reported, and subsequently resolved in Scream Screenings. As well as testing done against my Movie model.
 
 <hr>
 
 #### Bugs Unresolved(if applicable)
 
-| Bug ID | Bug Description                                     | Status    |
-| ------ | --------------------------------------------------- | --------- |
-| #001   | Broken 'Forgot your Password?' link on sign-in page | Unesolved |
+| Bug ID | Bug Description                                     | Status     |
+| ------ | --------------------------------------------------- | ---------- |
+| #001   | Broken 'Forgot your Password?' link on sign-in page | Unresolved |
 
 **Bug Details**
 Here are the details of the unresolved bugs:
@@ -217,6 +229,10 @@ Here are the details of the unresolved bugs:
 
 <hr>
 
+**Tests**
+
+Testing can be found in the test_movie.py file found in my movie app. I did 5 tests against my Movie model.
+
 #### Validator Testing
 
 - HTML
@@ -226,34 +242,31 @@ Here are the details of the unresolved bugs:
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub)
+**Heroku Deployment**
 
-- The site was deployed to GitHub pages. The steps to deploy are as follows:
-  - In the GitHub repository, navigate to the Settings tab
-  - From the source section drop-down menu, select the Main Branch
-  - Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+- Create a Heroku App
+- Sign up or log in to Heroku.
+- Connect to GitHub
+- Go to the 'Deploy' tab on Heroku.
+- Choose 'GitHub' as the deployment method and link your repository.
+- Configure Environment Variables on Heroku
+- Go to the 'Settings' tab on Heroku.
+- Click 'Reveal Config Vars' and add: -- DATABASE_URL -- SECRET_KEY -- CLOUDINARY_URL
+- Set Buildpacks
+- Ensure the Heroku Python buildpack is added under 'Settings' > 'Buildpacks'.
+- Deploy Your App
+- Select the branch you want to deploy (usually main) and click 'Deploy Branch'.
+- View Your Live App
+- Access your application via the Heroku app URL.
 
-The live link can be found here - https://code-institute-org.github.io/love-running-2.0/index.html
+The live link can be found here - https://scream-screenings-53b98376fed3.herokuapp.com/
 
 ## Credits
 
-In this section you need to reference where you got your content, media and extra help from.
-It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-
-You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 #### Content
-
-- The text for the Home page was taken from Wikipedia Article A
-- The development of this project was aided by the following YouTube tutorials:
-
-| Tutorial Title                       | Creator/Channel Name     | Description                                    |
-| ------------------------------------ | ------------------------ | ---------------------------------------------- |
-| [Tutorial Title 1](link-to-tutorial) | [Creator/Channel Name 1] | How this tutorial helped you.                  |
-| [Tutorial Title 2](link-to-tutorial) | [Creator/Channel Name 2] | How this tutorial contributed to your project. |
 
 - The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
 
-#### Media
+- The logo was designed by an AI logo design site [Design] (https://www.design.com/ai-logo-generator)
 
-The following images used in this project are sourced from Unsplash and are used under their respective licenses:
+- Comment form was inspired and followed via Code Institute comment form in their django-blog video series.
