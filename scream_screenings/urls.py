@@ -21,6 +21,7 @@ from movie import views as movie_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("accounts/", include("allauth.urls")),
     path('movies/', movie_views.movie_list, name='movies-list'),
     path('movie/<slug:movie_slug>/', movie_views.movie_detail, name='movie-detail'),
     path('', screamhome_views.index, name='home'),

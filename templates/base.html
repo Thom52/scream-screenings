@@ -64,16 +64,42 @@
             <a class="nav-link active" href="{% url 'home' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Register</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link nav-red" href="{% url 'movies-list' %}"
               >Movies</a
             >
           </li>
+          {% if request.user.is_authenticated %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'accounts_logout' %}{% endif %}"
+              href="/accounts/logout/"
+              >Logout</a
+            >
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'accounts_signup' %}{% endif %}"
+              href="/accounts/signup/"
+              >Register</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link {% if url_name == 'accounts_login' %}{% endif %}"
+              href="/accounts/login/"
+              >Login</a
+            >
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
+    {% if user.is_authenticated %}
+    <p class="text-end m-3">You are logged in as {{ user }}</p>
+    {% else %}
+    <p class="text-end m-3">You are not logged in</p>
+    {% endif %}
 
     <main>{% block content %} {% endblock %}</main>
 
