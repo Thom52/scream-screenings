@@ -178,6 +178,13 @@ footer {
   margin-bottom: 50px;
 }
 
+/* Movie Detail Styles ------------------------------  */
+
+.card-comment {
+  width: 350px;
+  margin-left: 1rem;
+}
+
 /* Card Styles ------------------------------  */
 
 .card-custom {
@@ -270,6 +277,12 @@ footer {
 /* Media Query for larger screens (992px and up) ------------------------------  */
 
 @media (min-width: 992px) {
+  /* Movie Detail ------------------------------  */
+  .card-comment {
+    width: 35%;
+    margin-left: 4.5rem;
+  }
+
   /* Introduction ------------------------------  */
   p {
     font-size: 15px;

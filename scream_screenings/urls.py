@@ -23,7 +23,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path('movies/', movie_views.movie_list, name='movies-list'),
-    path('movie/<slug:movie_slug>/', movie_views.movie_detail, name='movie-detail'),
+    path('movies/<slug:movie_slug>/', 
+         movie_views.movie_detail, name='movie-detail'),
+    path('movies/<slug:slug>/edit_comment/<int:comment_id>',
+         movie_views.comment_edit, name='comment_edit'),
+    path('movies/<slug:slug>/delete_comment/<int:comment_id>',
+         movie_views.comment_delete, name='comment_delete'),
     path('', screamhome_views.index, name='home'),
 ]
 
